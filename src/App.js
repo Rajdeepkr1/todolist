@@ -35,9 +35,9 @@ export default function App() {
         <div className="container__todo">
           <input
             type="text"
+            placeholder="Add The Items By Your Choice"
             value={todo}
             onChange={addElement}
-            placeholder="Add Items"
           />
           <div className="add__item" onClick={addItems}>
             AddItems
