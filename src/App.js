@@ -9,17 +9,24 @@ export default function App() {
     const eve = e.target.value;
     setTodo(eve);
   };
-  console.log(todo);
+  // console.log(todo);
 
   const addItems = () => {
-    setAdd([...add, todo]);
-    setTodo(" ");
+    if (!todo) {
+      alert("Please Add Somethig");
+    } else {
+      setAdd([...add, todo]);
+      setTodo(" ");
+    }
   };
   const deleteItem = (index) => {
     const updatedItems = add.filter((ele, id) => {
       return index !== id;
     });
     setAdd(updatedItems);
+  };
+  const DeleteAllItem = () => {
+    setAdd([]);
   };
   return (
     <>
@@ -35,24 +42,26 @@ export default function App() {
           <div className="add__item" onClick={addItems}>
             AddItems
           </div>
-          <ul className="ulist">
+          <thead className="ulist">
             <tr className="All__data">
               <th id="sn">S_No.</th>
               <th id="name">ItemName</th>
-              <th id="DeleteAll">DeleteAll</th>
+              <th id="Delete" onClick={DeleteAllItem}>
+                DeleteAll
+              </th>
             </tr>
-          </ul>
+          </thead>
 
           <ul className="ulist">
             {add.map((ele, index) => {
               return (
-                <tr className="All__data" key={index}>
-                  <th id="sn">{index}</th>
-                  <th id="name">{ele}</th>
-                  <th id="Delete" onClick={() => deleteItem(index)}>
+                <li className="All__data" key={index}>
+                  <td id="sn">{index + 1}</td>
+                  <td id="name">{ele}</td>
+                  <td id="Delete" onClick={() => deleteItem(index)}>
                     Delete
-                  </th>
-                </tr>
+                  </td>
+                </li>
               );
             })}
           </ul>

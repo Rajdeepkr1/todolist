@@ -11,7 +11,6 @@
 }
 .container__todo {
   padding: 10px;
-  /* margin-top: 10px; */
   margin-left: 40px;
   margin-right: 40px;
   background: yellow;
@@ -32,6 +31,7 @@
   list-style: none;
   background: red;
   color: white;
+  margin-top: 10px;
   width: 60vw;
   padding: 10px;
   text-align: center;
@@ -65,4 +65,14 @@
   background: red;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-weight: 20px;
+}
+#Delete {
+  cursor: pointer;
+  border: 2px solid olivedrab;
+  border-radius: 5px;
+  padding: 4px;
+  background: olivedrab;
 }
